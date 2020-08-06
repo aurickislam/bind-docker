@@ -1,0 +1,13 @@
+zone "websocket" {
+    type master;
+    allow-transfer { any; };
+    allow-update { any; };
+    file "/etc/bind/zone/websocket.conf.zone";
+};
+
+zone "desktop" {
+    type master;
+    allow-transfer { any; };
+    allow-update { any; };
+    file "/etc/bind/zone/desktop.conf.zone";
+};

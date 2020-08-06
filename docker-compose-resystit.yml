@@ -1,0 +1,18 @@
+version: '3.8'
+
+services:
+  resystit-bind:
+    image: resystit/bind9
+    container_name: resystit-bind
+    hostname: resystit-bind
+    restart: always
+    ports:
+      - 53:53/tcp
+      - 53:53/udp
+    volumes:
+      - ./bind/named.conf:/etc/bind/named.conf
+      - ./bind/named.conf.options:/etc/bind/named.conf.options
+      - ./bind/named.conf.local:/etc/bind/named.conf.local
+      - ./bind/zone:/etc/bind/zone
+#      - ./bind/zone/websocket.conf.zone:/etc/bind/zone/websocket.conf.zone
+#      - ./bind/zone/desktop.conf.zone:/etc/bind/zone/desktop.conf.zone

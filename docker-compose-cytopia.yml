@@ -1,0 +1,20 @@
+version: '3.8'
+
+services:
+  bind:
+#    build:
+#      context: .
+#      dockerfile: Dockerfile
+#    image: bind
+    image: cytopia/bind
+    container_name: bind
+    restart: always
+    ports:
+      - 53:53/tcp
+      - 53:53/udp
+    environment:
+      - DNS_FORWARDER=1.1.1.1,1.0.0.1
+#      - WILDCARD_DNS=desktop=192.168.88.2,brix=192.168.88.17,pn40=192.168.88.18
+      - EXTRA_HOSTS=desktop=192.168.88.2,websocket=192.168.88.18,www.pn40.com=192.168.88.18,brix.com=192.168.88.17
+#      - ALLOW_QUERY=192.168.88.0/24,127.0.0.1
+      - ALLOW_RECURSION=192.168.88.0/24,127.0.0.1

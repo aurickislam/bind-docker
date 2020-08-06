@@ -1,0 +1,9 @@
+FROM alpine:latest
+RUN apk update && apk upgrade && apk add bind bash && rm -rf /var/cache/apk/*
+
+EXPOSE 53
+
+COPY entrypoint-alpine-auto.sh /
+RUN chmod 777 /entrypoint-alpine-auto.sh
+
+ENTRYPOINT ["/entrypoint-alpine-auto.sh"]
