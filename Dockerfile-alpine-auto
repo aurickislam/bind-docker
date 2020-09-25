@@ -1,5 +1,6 @@
 FROM alpine:latest
-RUN apk update && apk upgrade && apk add bind bash && rm -rf /var/cache/apk/*
+
+RUN apk update && apk upgrade && apk add --no-cache bind bash && rm -rf /var/cache/apk/*
 
 EXPOSE 53
 

@@ -751,5 +751,5 @@ if [ ! -f "$EXIST_TEST" ]; then
   log "info" "Starting $(named -V | grep -oiE '^BIND[[:space:]]+[0-9.]+')" "${DEBUG_ENTRYPOINT}"
   named-checkconf "${NAMED_CONF}"
 fi
-exec /usr/sbin/named -c /etc/bind/named.conf -g -u named
 
+exec /usr/sbin/named -c /etc/bind/named.conf -g -u named

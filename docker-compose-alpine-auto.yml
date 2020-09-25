@@ -8,15 +8,15 @@ services:
     image: bind:alpine-auto
     container_name: bind-alpine-auto
     hostname: bind-alpine-auto
-#    restart: always
+    restart: always
     ports:
       - 53:53/tcp
       - 53:53/udp
     environment:
-      - DEBUG_ENTRYPOINT=2
-      - DOCKER_LOGS=1
+#      - DEBUG_ENTRYPOINT=2
+#      - DOCKER_LOGS=1
       - DNS_FORWARDER=1.1.1.1,1.0.0.1
 #      - WILDCARD_DNS=desktop=192.168.88.2,brix=192.168.88.17,pn40=192.168.88.18
-      - EXTRA_HOSTS=desktop=192.168.88.2,websocket=192.168.88.17
+      - EXTRA_HOSTS=desktop=192.168.88.2,websocket=192.168.88.18
 #      - ALLOW_QUERY=192.168.88.0/24,127.0.0.1
       - ALLOW_RECURSION=192.168.88.0/24,127.0.0.1
